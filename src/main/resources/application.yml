@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: leave_request_bpmn
+  datasource:
+    url: jdbc:h2:file:./data/leave_request
+    driver-class-name: org.h2.Driver
+    username: linh
+    password: 123
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+      dialect: org.hibernate.dialect.H2Dialect
+      format_sql: true
+
+
+camunda:
+  bpm:
+    history-level: full
+    database:
+      type: h2
+      schema-update: auto
+
+server:
+  port: 8081
+  servlet:
+    context-path: /
